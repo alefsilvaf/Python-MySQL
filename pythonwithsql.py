@@ -1,7 +1,7 @@
 import pymysql
 
 host= "localhost"
-user= "Alef"
+user= "New"
 password= "123456"
 db= "escola_curso"
 port = 3306
