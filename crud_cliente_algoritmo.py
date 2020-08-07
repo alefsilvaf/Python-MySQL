@@ -2,7 +2,7 @@ import pymysql
 
 host= "localhost"
 user= "root"
-password= "s0rt3190"
+password= "senha"
 db= "crud_cliente"
 port = 3306
 con= pymysql.connect(host, user, password, db, port)
