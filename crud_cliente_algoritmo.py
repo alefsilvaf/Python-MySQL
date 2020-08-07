@@ -16,7 +16,7 @@ for row in res:
 	print(row)
 
 """#Insere
-c.execute("INSERT INTO usuarios (nome, cpf, email, telefone) VALUES ('Álef Silva', '12345678910', 'alefsilva@outlook.com', '35 3555 1515')")
+c.execute("INSERT INTO usuarios (nome, cpf, email, telefone) VALUES ('Álef Silva', '12345678910', 'a@outlook.com', '66 6666 6666')")
 
 con.commit()
 print('Usuarios e seus dados: ')
