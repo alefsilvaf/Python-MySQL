@@ -1,0 +1,289 @@
+Anotações do Curso Python & MySQL.
+
+======================== DIA 1 ===============================
+Python:
+-Nâo precisa de " ; "
+-Os comandos vão desta forma nomedocomando(parametro)
+-Usando o SublimeText a execução do código é feita por "ctrl+b"
+-Os comentários são feitos por "#comentário", caso haja várias linhas faz-se """comentario"""
+-Python não reconhece caracteres especiais sem o " # -*- coding: utf-8 -*- "
+Pra usar o cmd: Desktop\Py Curso\ nome do programa
+comando "more" exibe informações de um arquivo no cmd
+>>>'>=' not supported between instances of 'str' and 'int'<<<, resolve-se com: int(input('Enter the name of the player you wish to vote for'))
+
+VARIAVEIS E TIPOS DE DADOS PY:
+-declaração semelhante a do c++
+- Temos: int, float, string, bool, lista #Não precisa especificar no cod o que é cada uma, o python entende
+Exemplos:
+var1= 1 #inteira
+var2= 1.1 #float
+var3= "Eu sou uma string"
+var4= #True, Flase
+var5= [1,2,3,4,5, "texto",9.9,True]
+
+CALCULOS PY:
+Soma: a+b
+Multiplicação a*b
+Divisão a/b
+Expoenciação a ** b
+Módulo a % b
+
+OPERADORES RELACIONAIS:
+Igual ==
+Diferente !=
+Maior >
+Menor <
+Maior ou igual >=
+Menor ou igual <=
+Exemplo: (x>y) output true/false.
+
+OPERADORES LÓGICOS:
+AND igual o & da linguagem C
+OR igual a || da linguagem C
+Not, exemplo:
+banda = input('Qual melhor banda do mundo? ')
+
+if not banda=='rush': #se a banda recebida na entrada não for rush
+    print('Herege!')
+else:
+    print('Correto, é o Rush!')
+
+ESTRUTURAS CONDICIONAIS:
+comando if, exemplo:
+	if x>y:
+		faça
+
+comando else, exemplo:
+	if x>y:
+		faça
+	else:		
+		faça
+
+comando elif, exemplo:
+	if x>y:
+		faça
+	elif y>x:
+		faça
+	else:		
+		faça
+
+LAÇOS DE REPETIÇÃO:
+Laço while, exemplo:
+x = 1  # (iterator)
+while x < 10:
+x=x+1 (incrementação)
+
+laço for, exemplos:
+for i in var5:
+	faça
+
+for i in range (10):
+	faça
+
+for i in range (começo,fim,pula qnts casas):
+	faça
+
+LEITURA DE DADOS DO USUARIO:
+variavel = input  #Usa o terminal
+
+CONCATENAÇÃO DO PRINT é igual ao java Ex: (Variavel textual  + "Texto")
+
+STRINGS:
+Tamanho de uma string = len(nomestring)
+Juntar duas strings (a + b)
+Exibir em x posição (nomedavariavel[indice])
+Imprimir só um pedaço da string (nomedavariavel [inicio:fim])
+
+Método com string: 
+tudo minusculo= nomedavariavel.lower()
+tudo maiusculo= nomedavariavel.upper()
+tirar espaços e caracteres especiais de uma string: nomedavariavel.strip()
+
+converte uma sequencia em um lista lista: nomedavariavel.split(o que vai ser o separador na lista)
+Ex:	a= "ave maria aleluia"
+	b= a.split(" ")
+output: [ave, maria, aleluia]
+
+retorna a posição que a substring está na string: string.find(parametro)
+ex: busca = a.find("ave")
+output: 0
+
+Substituir partes de um string: a.replace("ave","passarinho")
+output: passarinho maria aleluia
+
+================= DIA 2 ========================
+LISTAS:
+- A insersão de elementos em um lista de faz por lista.append("string")
+- saber se algum elemento x está na lista: uso do if "elemento" in lista:
+-remover elemento da lista: del lista [indicie], deletar toda lista del lista[:]
+-ordenar lista: lista.sort() >crescenre<
+-reverter lista: lista.sort(reverse=true)
+
+DICIONARIO:
+declaração: dicionario = {"chave": "valore", "chaveb":"valor2"}
+print(dicionario), print(dicionario["chave"])
+percorrer um dicionario:
+for chave in dicionario:
+	print(chave+dicionario[chave])
+for i in dicionario.items(): #ou dicionario.keys
+	print(i)
+
+MINIPULAÇÃO DE ARQUIVOS:
+- Para abriri o arquivo: função "open", variavel=open(nomearquivo, modo)
+-Para escrever no arquivo: arquivo.write("texto")
+-Para fecha ro arquivo: aquivo.close()
+-Modos:
+r: leitura
+w: escrita
+a: leitura+escrita #(oq escrever vai pro fim do arquivo)
+r+: leitura e escrita
+a+: abre pra atualização
+-Funções para ler arquivo:
+arquivo.read() #Lê o arquivo completo e vai tudo pra uma variavel só
+arquivo.readlines() #lê todo arquivo linha por linha e adiciona em uma lista
+
+FUNÇÕES:
+-Vão em cima do escopo
+-Declaração: def  NOME (paramentros)
+-usa return ou printa o resultado dentro dela mesmo
+
+GERAR NUMEROS ALEATORIOS:
+- import random pra usar
+Como usa: 
+-um inteiro: nomevariavel.randint(0,10) # pega um numero aleatório de entre 0 e 10
+-com lista: lista = [1, 2, 65] ________ nomeavariavel.choice(lista) #escolhe um numero aleatorio que está em lista 
+
+TRATAMENTO DE EXCEÇÕES:
+-Faz o programa rodar enquanto não haja erros, exemplo
+a=2, b=0
+print(a/b) #da erro por conta da divisão por 0
+Então usa-se o comando "try":
+try:
+	print(a/b)
+except: #se der erro ele entra nisso
+	print("Deu erro")
+
+TRATAMENTOS ESPECIAIS:
+Python compara int com string sim, mas não direito
+tem que botar tipo(input)
+
+COMPRESSÃO DE LISTAS:
+-Podemos gerar listas colocando os comandos dentro dela
+ex:
+x = [ 1, 2, 3, 4]
+y = [ i**2 for i in x]
+z = [i for i in x if i%2==1]
+
+-Enumerate #enumera item da lista
+ lista = [" coisa ", "coisa 2 ", "coisa 3"]
+for i, var in enumerate(lista)
+output:
+0 coisa
+1 coisa2
+2 coisa3
+
+-Filter:
+Faz um de uma função e uma variavel como parametro.
+Exemplo: Queremos pegar o elementos pares d euma listas utilizando o filter:
+def funcao(parametro):
+	if paramento % 2 == 0:
+		return parametro
+lista = [1,2,3,4,5,6,7]
+
+variavel = filter(funcao, lista)
+print(list(funcao))
+
+-Reduce:
+from functools import reduce
+def soma(x,y):
+	return x+y)
+lista[1,3,5,7,10]
+soma= reduce(soma,lista)
+print(soma)
+
+-zip
+lista1=[1,2]
+lista2=[a,b]
+for numero, nome in zip(lista1,lista2):
+	print (numero, nome)
+output: 	1 a
+	2 b
+
+-map
+def dobro(x)
+	return x*2
+valor=[1,2,3,4,5]
+print(list(map(dobro,valor))
+output= 2 4 6 8 10
+
+-lamba usada pra usar função só uma vez
+ex: map(lamba x: x*2, lista)
+
+gráfico py
+https://www.delftstack.com/pt/tutorial/matplotlib/line-chart/
+
+MANIPULANDO BANCO DE DADOS
+-Geralmente temos um arquivo .csv
+-Podemos gerar gráficos importando a biblioteca matplotlib.pyplot
+-Um grafico csv tem separadores, a primeira linha especifica coluna, para identificar ass colunas colocamos
+o separador como parametro da função split que é aquela que faz quebrar strings.
+- Os indices passados como parametro das linhas são as colunas
+
+FUNÇÕES PRA CRIAÇÃO E ASSOCIAÇÃO DE DADOS:
+.plot(x,y) :- usa x e y na crição do gráfico de linhas
+.bar(x,y) grafico de barras
+.scatter adiciona pontos
+podemos associar x e y os valores que quisermos
+em uma associação  com os dados de uma tabela fazemos o x.append(int(linha[0]))
+.title da o titulo do drágico
+.xlabel da a descrição dos dados
+.show mostra o gráfico
+.savefig salva figura do gráfico
+
+BOXPLOT:
+? associa 50/5 do dado
+
+ESTUDO DE CASO DOS GENESHUMANO VS BACTERIA:
+função para gerar pares de um conjunto de 4 letras:
+for i in ['A', 'T', 'C', 'G']:
+	for j in ['A', 'T', 'C', 'G']:
+		var[i+j]=0
+
+HTML:
+PRINTAR HTML
+
+    entrada = open("16s_bacteria.fasta").read()
+    saida = open("16s_bacteria.html","w")
+    #entrada = open("18s_humano.fasta").read()
+    #saida = open("16s_humano.html","w")
+     
+    cont = {}
+     
+    for i in ['A', 'T', 'C', 'G']:
+    	for j in ['A', 'T', 'C', 'G']:
+    		cont[i+j] = 0
+     
+    entrada = entrada.replace("\n","")
+     
+    for k in range(len(entrada)-1):
+    	cont[entrada[k]+entrada[k+1]] += 1
+     
+    # html
+     
+    saida.write("<div>")
+     
+    i = 1
+    for k in cont:
+    	transparencia = cont[k]/max(cont.values())
+    	saida.write("<div style='width:100px; border:1px solid #111; color:#fff; height:100px; float:left; background-color:rgba(0, 0, 0, "+str(transparencia)+"')>"+k+"</div>")
+     
+    	if i%4 == 0:
+    		saida.write("<div style='clear:both'></div>")
+     
+    	i+=1
+     
+    saida.close()
+
+
+
+
