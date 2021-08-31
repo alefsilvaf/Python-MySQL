@@ -1,2 +1,2 @@
-# Python-MySQL
+# Python & MySQL - Udemy
 Algoritmos desenvolvidos durante minha tragetória de aprendizado em um curso da Udemy sobre Python e MySQL.
